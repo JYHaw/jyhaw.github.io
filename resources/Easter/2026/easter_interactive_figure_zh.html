@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Easter Figure</title>
+  <title>复活节互动图</title>
   <style>
     :root {
       --bg: #f3f3f3;
@@ -246,57 +246,57 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>Interactive Easter Figure</h1>
+    <h1>复活节互动图</h1>
     <p class="subtitle"></p>
 
     <div class="layout">
       <div class="figure-card">
-        <div class="figure-box" aria-label="Interactive artwork of the life of Jesus Christ">
-          <img src="easter_figure.png" alt="Sketch showing baby Jesus, teenage Jesus, adult Jesus, the crucifixion, and the empty tomb." />
+        <div class="figure-box" aria-label="耶稣生平互动图">
+          <img src="easter_figure_zh.png" alt="素描展示婴孩耶稣、少年耶稣、成年耶稣、十字架与空坟墓。" />
 
-          <button class="hotspot dot" style="left: 18%; top: 60%;" data-key="birth" aria-label="Baby Jesus">
-            <span class="tooltip">Birth</span>
+          <button class="hotspot dot" style="left: 18%; top: 60%;" data-key="birth" aria-label="婴孩耶稣">
+            <span class="tooltip">降生</span>
           </button>
 
-          <button class="hotspot dot" style="left: 38%; top: 40%;" data-key="teen" aria-label="Teenage Jesus">
-            <span class="tooltip">Teen</span>
+          <button class="hotspot dot" style="left: 38%; top: 40%;" data-key="teen" aria-label="少年耶稣">
+            <span class="tooltip">少年</span>
           </button>
 
-          <button class="hotspot dot" style="left: 56%; top: 30%;" data-key="adult" aria-label="Adult Jesus">
-            <span class="tooltip">Adult</span>
+          <button class="hotspot dot" style="left: 56%; top: 30%;" data-key="adult" aria-label="成年耶稣">
+            <span class="tooltip">成年</span>
           </button>
 
-          <button class="hotspot dot" style="left: 80%; top: 20%;" data-key="cross" aria-label="Crucifixion">
-            <span class="tooltip">Cross</span>
+          <button class="hotspot dot" style="left: 80%; top: 20%;" data-key="cross" aria-label="十字架">
+            <span class="tooltip">十字架</span>
           </button>
 
-          <button class="hotspot dot" style="left: 22%; top: 25%;" data-key="tomb" aria-label="Resurrection">
-            <span class="tooltip">Resurrection</span>
+          <button class="hotspot dot" style="left: 22%; top: 25%;" data-key="tomb" aria-label="复活">
+            <span class="tooltip">复活</span>
           </button>
 
-          <button class="hotspot dot" style="left: 65%; top: 12%;" data-key="title" aria-label="Main verse">
-            <span class="tooltip">Main verse</span>
+          <button class="hotspot dot" style="left: 72%; top: 13%;" data-key="title" aria-label="主题经文">
+            <span class="tooltip">主题经文</span>
           </button>
         </div>
       </div>
 
       <aside class="panel">
-        <h2 id="panel-title">Matthew 1:21</h2>
-        <p class="helper">Move your mouse over the image, or click a marker. The verse and clickable reference will update here.</p>
+        <h2 id="panel-title">马太福音 1:21</h2>
+        <p class="helper">将鼠标移到图片上，或点击标记，这里的经文与可点击参考资料会随之更新。</p>
 
         <div class="verse-card">
-          <h3 id="scene-name">Main verse</h3>
-          <a id="verse-link" class="verse-ref" href="#" target="_blank" rel="noopener noreferrer">Open reference</a>
-          <blockquote id="verse-text">“He will save His people from their sins.”</blockquote>
-          <p id="verse-note" class="note">This is the promise stated near the beginning of the Gospel account and it frames the whole artwork.</p>
+          <h3 id="scene-name">主题经文</h3>
+          <a id="verse-link" class="verse-ref" href="#" target="_blank" rel="noopener noreferrer">打开经文参考</a>
+          <blockquote id="verse-text">“因他要将自己的百姓从罪恶里救出来。”</blockquote>
+          <p id="verse-note" class="note">这是福音书开头所给出的应许，也成为整幅作品的主轴。</p>
         </div>
 
-        <div class="buttons" aria-label="Quick jump buttons">
-          <button type="button" data-jump="birth">Birth</button>
-          <button type="button" data-jump="teen">Teen</button>
-          <button type="button" data-jump="adult">Adult</button>
-          <button type="button" data-jump="cross">Cross</button>
-          <button type="button" data-jump="tomb">Resurrection</button>
+        <div class="buttons" aria-label="快速跳转按钮">
+          <button type="button" data-jump="birth">降生</button>
+          <button type="button" data-jump="teen">少年</button>
+          <button type="button" data-jump="adult">成年</button>
+          <button type="button" data-jump="cross">十字架</button>
+          <button type="button" data-jump="tomb">复活</button>
         </div>
 
         <p class="footer"></p>
@@ -307,45 +307,45 @@
   <script>
     const data = {
       title: {
-        label: 'Main verse',
-        ref: 'Matthew 1:21',
-        text: '“He will save His people from their sins.”',
-        note: 'This is the promise stated near the beginning of the Gospel account and it frames the whole artwork.',
+        label: '主题经文',
+        ref: '马太福音 1:21',
+        text: '“因他要将自己的百姓从罪恶里救出来。”',
+        note: '这是福音书开头所给出的应许，也成为整幅作品的主轴。',
         href: 'https://www.biblegateway.com/passage/?search=Matthew%201%3A21&version=ESV'
       },
       birth: {
-        label: 'Birth of Jesus',
-        ref: 'Luke 2:7',
-        text: '“And she gave birth to her firstborn son and wrapped him in swaddling cloths and laid him in a manger.”',
-        note: 'The manger scene represents the incarnation: the Son entering human history in humility.',
+        label: '耶稣降生',
+        ref: '路加福音 2:7',
+        text: '“就生了头胎的儿子，用布包起来，放在马槽里。”',
+        note: '马槽场景代表道成肉身：圣子以谦卑进入人类历史。',
         href: 'https://www.biblegateway.com/passage/?search=Luke%202%3A7&version=ESV'
       },
       teen: {
-        label: 'Teenage Jesus',
-        ref: 'Luke 2:52',
-        text: '“And Jesus increased in wisdom and in stature and in favor with God and man.”',
-        note: 'This fits the youthful stage in your drawing and points to Jesus growing in wisdom and maturity.',
+        label: '少年耶稣',
+        ref: '路加福音 2:52',
+        text: '“耶稣的智慧和身量，并神和人喜爱他的心，都一齐增长。”',
+        note: '这对应你画中的少年阶段，也指向耶稣在智慧与生命中的成长。',
         href: 'https://www.biblegateway.com/passage/?search=Luke%202%3A52&version=ESV'
       },
       adult: {
-        label: 'Adult Jesus',
-        ref: 'John 14:6',
-        text: '“I am the way, and the truth, and the life. No one comes to the Father except through me.”',
-        note: 'The central adult figure anchors the composition and can represent Jesus’ earthly ministry and identity.',
+        label: '成年耶稣',
+        ref: '约翰福音 14:6',
+        text: '“我就是道路、真理、生命；若不借着我，没有人能到父那里去。”',
+        note: '中央的成年耶稣成为构图的核心，也可代表祂在世上的事工与身份。',
         href: 'https://www.biblegateway.com/passage/?search=John%2014%3A6&version=ESV'
       },
       cross: {
-        label: 'The Cross',
-        ref: '1 Peter 2:24',
-        text: '“He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness.”',
-        note: 'This section ties directly to Good Friday and the penalty of sin dealt with at the cross.',
+        label: '十字架',
+        ref: '彼得前书 2:24',
+        text: '“他被挂在木头上，亲身担当了我们的罪，使我们既然在罪上死，就得以在义上活。”',
+        note: '这一部分直接连到受难日，也指向罪的刑罚在十字架上被承担。',
         href: 'https://www.biblegateway.com/passage/?search=1%20Peter%202%3A24&version=ESV'
       },
       tomb: {
-        label: 'The Empty Tomb',
-        ref: 'Luke 24:6',
-        text: '“He is not here, but has risen.”',
-        note: 'The resurrection light becomes the visual destination of the whole artwork.',
+        label: '空坟墓',
+        ref: '路加福音 24:6',
+        text: '“他不在这里，已经复活了。”',
+        note: '复活的光成为整幅作品在视觉上的归向。',
         href: 'https://www.biblegateway.com/passage/?search=Luke%2024%3A6&version=ESV'
       }
     };
@@ -364,7 +364,7 @@
 
       titleEl.textContent = item.ref;
       sceneNameEl.textContent = item.label;
-      verseLinkEl.textContent = `Open ${item.ref}`;
+      verseLinkEl.textContent = `打开 ${item.ref}`;
       verseLinkEl.href = item.href;
       verseTextEl.textContent = item.text;
       verseNoteEl.textContent = item.note;
