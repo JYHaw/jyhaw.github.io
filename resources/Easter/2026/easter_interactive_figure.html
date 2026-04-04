@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Easter Figure</title>
+  <style>
+    :root {
+      --bg: #f3f3f3;
+      --card: rgba(255,255,255,0.96);
+      --ink: #2f241d;
+      --accent: #7a5c46;
+      --border: rgba(47,36,29,0.16);
+      --shadow: 0 12px 30px rgba(0,0,0,0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 28px 18px 40px;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; }
+    h1 {
+      font-size: clamp(1.6rem, 2vw, 2.2rem);
+      margin: 0 0 8px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .subtitle {
+      text-align: center;
+      margin: 0 0 24px;
+      color: #5c5048;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(320px, 720px) minmax(280px, 360px);
+      gap: 24px;
+      align-items: start;
+      justify-content: center;
+    }
+    .figure-card, .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+    .figure-card { padding: 18px; }
+    .figure-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 768 / 1024;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #e9e9e9;
+    }
+    .figure-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .hotspot {
+      position: absolute;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      background: transparent;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(122, 92, 70, 0.72);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .dot:hover,
+    .dot:focus-visible,
+    .dot.active {
+      background: rgba(122, 92, 70, 1);
+      box-shadow: 0 0 0 6px rgba(122, 92, 70, 0.18);
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .dot::before,
+    .dot::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      inset: 0;
+    }
+
+    .dot::before {
+      border: 1px solid rgba(122, 92, 70, 0.35);
+      animation: pulse 2.1s infinite;
+    }
+
+    .dot::after {
+      inset: -6px;
+      border: 1px solid rgba(122, 92, 70, 0.20);
+      animation: pulseOuter 2.1s infinite;
+    }
+
+    .dot:hover::before,
+    .dot:hover::after,
+    .dot:focus-visible::before,
+    .dot:focus-visible::after,
+    .dot.active::before,
+    .dot.active::after {
+      animation-duration: 1.35s;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.70; transform: scale(1); }
+      70% { opacity: 0; transform: scale(2.1); }
+      100% { opacity: 0; transform: scale(2.1); }
+    }
+
+    @keyframes pulseOuter {
+      0% { opacity: 0.42; transform: scale(1); }
+      70% { opacity: 0; transform: scale(2.8); }
+      100% { opacity: 0; transform: scale(2.8); }
+    }
+
+    .tooltip {
+      position: absolute;
+      top: -34px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-size: 0.74rem;
+      line-height: 1;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(47,36,29,0.08);
+      color: #6a5242;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 3;
+    }
+
+    .dot:hover .tooltip,
+    .dot:focus-visible .tooltip,
+    .dot.active .tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-2px);
+    }
+
+    .panel {
+      padding: 20px;
+      position: sticky;
+      top: 16px;
+    }
+    .panel h2 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+    .helper {
+      margin: 0 0 18px;
+      color: #645851;
+      font-size: 0.96rem;
+      line-height: 1.5;
+    }
+    .verse-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      background: #fffdfb;
+    }
+    .verse-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+    }
+    .verse-ref {
+      display: inline-block;
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .verse-ref:hover { text-decoration: underline; }
+    blockquote {
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #2f241d;
+    }
+    .note {
+      margin-top: 14px;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: #665b53;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .buttons button {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: white;
+      color: var(--ink);
+      padding: 10px 14px;
+      font: inherit;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .buttons button:hover,
+    .buttons button:focus-visible {
+      border-color: rgba(122, 92, 70, 0.9);
+      background: #fffaf6;
+      outline: none;
+    }
+    .footer {
+      margin-top: 22px;
+      color: #6e625b;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 960px) {
+      .layout { grid-template-columns: 1fr; }
+      .panel { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Interactive Easter Figure</h1>
+    <p class="subtitle"></p>
+
+    <div class="layout">
+      <div class="figure-card">
+        <div class="figure-box" aria-label="Interactive artwork of the life of Jesus Christ">
+          <img src="easter_figure.png" alt="Sketch showing baby Jesus, teenage Jesus, adult Jesus, the crucifixion, and the empty tomb." />
+
+          <button class="hotspot dot" style="left: 18%; top: 60%;" data-key="birth" aria-label="Baby Jesus">
+            <span class="tooltip">Birth</span>
+          </button>
+
+          <button class="hotspot dot" style="left: 38%; top: 40%;" data-key="teen" aria-label="Teenage Jesus">
+            <span class="tooltip">Teen</span>
+          </button>
+
+          <button class="hotspot dot" style="left: 56%; top: 30%;" data-key="adult" aria-label="Adult Jesus">
+            <span class="tooltip">Adult</span>
+          </button>
+
+          <button class="hotspot dot" style="left: 68%; top: 20%;" data-key="cross" aria-label="Crucifixion">
+            <span class="tooltip">Cross</span>
+          </button>
+
+          <button class="hotspot dot" style="left: 22%; top: 25%;" data-key="tomb" aria-label="Resurrection">
+            <span class="tooltip">Resurrection</span>
+          </button>
+
+          <button class="hotspot dot" style="left: 65%; top: 12%;" data-key="title" aria-label="Main verse">
+            <span class="tooltip">Main verse</span>
+          </button>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h2 id="panel-title">Matthew 1:21</h2>
+        <p class="helper">Move your mouse over the image, or click a marker. The verse and clickable reference will update here.</p>
+
+        <div class="verse-card">
+          <h3 id="scene-name">Main verse</h3>
+          <a id="verse-link" class="verse-ref" href="#" target="_blank" rel="noopener noreferrer">Open reference</a>
+          <blockquote id="verse-text">“He will save His people from their sins.”</blockquote>
+          <p id="verse-note" class="note">This is the promise stated near the beginning of the Gospel account and it frames the whole artwork.</p>
+        </div>
+
+        <div class="buttons" aria-label="Quick jump buttons">
+          <button type="button" data-jump="birth">Birth</button>
+          <button type="button" data-jump="teen">Teen</button>
+          <button type="button" data-jump="adult">Adult</button>
+          <button type="button" data-jump="cross">Cross</button>
+          <button type="button" data-jump="tomb">Resurrection</button>
+        </div>
+
+        <p class="footer"></p>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const data = {
+      title: {
+        label: 'Main verse',
+        ref: 'Matthew 1:21',
+        text: '“He will save His people from their sins.”',
+        note: 'This is the promise stated near the beginning of the Gospel account and it frames the whole artwork.',
+        href: 'https://www.biblegateway.com/passage/?search=Matthew%201%3A21&version=ESV'
+      },
+      birth: {
+        label: 'Birth of Jesus',
+        ref: 'Luke 2:7',
+        text: '“And she gave birth to her firstborn son and wrapped him in swaddling cloths and laid him in a manger.”',
+        note: 'The manger scene represents the incarnation: the Son entering human history in humility.',
+        href: 'https://www.biblegateway.com/passage/?search=Luke%202%3A7&version=ESV'
+      },
+      teen: {
+        label: 'Teenage Jesus',
+        ref: 'Luke 2:52',
+        text: '“And Jesus increased in wisdom and in stature and in favor with God and man.”',
+        note: 'This fits the youthful stage in your drawing and points to Jesus growing in wisdom and maturity.',
+        href: 'https://www.biblegateway.com/passage/?search=Luke%202%3A52&version=ESV'
+      },
+      adult: {
+        label: 'Adult Jesus',
+        ref: 'John 14:6',
+        text: '“I am the way, and the truth, and the life. No one comes to the Father except through me.”',
+        note: 'The central adult figure anchors the composition and can represent Jesus’ earthly ministry and identity.',
+        href: 'https://www.biblegateway.com/passage/?search=John%2014%3A6&version=ESV'
+      },
+      cross: {
+        label: 'The Cross',
+        ref: '1 Peter 2:24',
+        text: '“He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness.”',
+        note: 'This section ties directly to Good Friday and the penalty of sin dealt with at the cross.',
+        href: 'https://www.biblegateway.com/passage/?search=1%20Peter%202%3A24&version=ESV'
+      },
+      tomb: {
+        label: 'The Empty Tomb',
+        ref: 'Luke 24:6',
+        text: '“He is not here, but has risen.”',
+        note: 'The resurrection light becomes the visual destination of the whole artwork.',
+        href: 'https://www.biblegateway.com/passage/?search=Luke%2024%3A6&version=ESV'
+      }
+    };
+
+    const titleEl = document.getElementById('panel-title');
+    const sceneNameEl = document.getElementById('scene-name');
+    const verseLinkEl = document.getElementById('verse-link');
+    const verseTextEl = document.getElementById('verse-text');
+    const verseNoteEl = document.getElementById('verse-note');
+    const hotspots = [...document.querySelectorAll('.hotspot')];
+    const jumps = [...document.querySelectorAll('[data-jump]')];
+
+    function setActive(key) {
+      const item = data[key];
+      if (!item) return;
+
+      titleEl.textContent = item.ref;
+      sceneNameEl.textContent = item.label;
+      verseLinkEl.textContent = `Open ${item.ref}`;
+      verseLinkEl.href = item.href;
+      verseTextEl.textContent = item.text;
+      verseNoteEl.textContent = item.note;
+
+      hotspots.forEach(h => h.classList.toggle('active', h.dataset.key === key));
+    }
+
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('mouseenter', () => setActive(hotspot.dataset.key));
+      hotspot.addEventListener('focus', () => setActive(hotspot.dataset.key));
+      hotspot.addEventListener('click', () => setActive(hotspot.dataset.key));
+    });
+
+    jumps.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.jump;
+        setActive(key);
+        const target = document.querySelector(`.hotspot[data-key="${key}"]`);
+        if (target) target.focus();
+      });
+    });
+
+    setActive('title');
+  </script>
+</body>
+</html>
