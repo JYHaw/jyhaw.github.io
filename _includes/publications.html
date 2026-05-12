@@ -1,13 +1,20 @@
 <div class="row g-5 mb-5">
   <div>
-    <h3 class="fw-bold border-bottom pb-3 mb-5">Selected outputs and media</h3>
     {% if page.title == "Home" %}
+      <h3 class="fw-bold border-bottom pb-3 mb-5">Selected publications</h3>
       {% for item in site.data.publications.featured %}
-        <p><a href="{{ item.url }}">{{ item.name }}</a></p>
+        <p><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></p>
       {% endfor %}
+      <p class="mt-4"><a href="{{ site.github.url }}/publications">View more publications →</a></p>
     {% else %}
+      <h3 class="fw-bold border-bottom pb-3 mb-5">Selected journal articles</h3>
       {% for item in site.data.publications.index %}
-        <p><a href="{{ item.url }}">{{ item.name }}</a></p>
+        <p><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></p>
+      {% endfor %}
+
+      <h3 class="fw-bold border-bottom pb-3 mt-5 mb-5">Selected standardisation & technical outputs</h3>
+      {% for item in site.data.publications.technical %}
+        <p><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></p>
       {% endfor %}
     {% endif %}
   </div>
