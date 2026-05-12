@@ -3,6 +3,8 @@ layout: home
 title: "Home"
 ---
 
-This theme allows an academic person to showcase their research interests, publications, research group, curriculum vitae, any courses that they may be teaching, or anything else they may want to put out into the world.
+Dr. Jing Yan Haw is a Senior Research Fellow at the Centre for Quantum Technologies, National University of Singapore. His work focuses on quantum communication technologies, quantum-safe network architectures, and quantum photonics engineering.
 
-Academics can use this home page to describe their research interests, display their latest publications, or provide an introduction to their research group.
+He is a technical lead for Singapore’s National Quantum-Safe Network, supporting a vendor-neutral, multi-protocol testbed spanning more than 12 nodes and over 1500 km of deployed fibre. His work includes QKD network deployment, application-layer integration, centralized key management, and quantum-safe proof-of-concept applications across research, industry, and government partners.
+
+His research interests include quantum key distribution networks, quantum random number generation, post-quantum cryptography deployment, hybrid quantum-safe architectures, and free-space, fibre-based, and integrated photonic platforms for quantum state generation and detection.

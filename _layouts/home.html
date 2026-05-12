@@ -2,23 +2,45 @@
 layout: default
 ---
 
+<div class="row g-5 mb-5 align-items-center">
+  <div class="col-md-8">
+    <p class="text-uppercase small text-muted mb-2">Quantum communications · quantum-safe networks · quantum photonics</p>
+    <h1 class="fw-bold mb-3">Dr. Jing Yan Haw</h1>
+    {{ content }}
+    <p class="mt-4">
+      <a class="btn btn-dark me-2" href="{{ site.github.url }}/cv">View CV</a>
+      <a class="btn btn-outline-dark" href="{{ site.github.url }}/assets/CV_JingYanHaw_2026.pdf">Download PDF CV</a>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <div class="p-4 border rounded-3 bg-light">
+      <h3 class="h5 fw-bold">Highlights</h3>
+      <ul class="mb-0">
+        <li>Technical lead for Singapore’s National Quantum-Safe Network</li>
+        <li>Editor of Singapore’s reference specification on QKD networks</li>
+        <li>Contributor to ITU-T and ETSI quantum technology standardisation</li>
+        <li>Researcher in quantum-safe technologies and quantum photonics engineering</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="row g-5 mb-5">
   <div class="col-md-6">
-    <h3 class="fw-bold">Research</h3>
-    {{ content }}
+    <h3 class="fw-bold border-bottom pb-3 mb-4">Research interests</h3>
+    <h4 class="h6 fw-bold">Quantum communication technologies</h4>
+    <p>QKD networks, quantum random number generators, hybrid quantum-safe architectures, and post-quantum cryptography deployment.</p>
+    <h4 class="h6 fw-bold">Quantum photonics engineering</h4>
+    <p>Free-space, fibre-based, and integrated quantum photonic platforms for discrete and continuous-variable quantum state generation and detection.</p>
   </div>
   <div class="col-md-6">
-    <img src="{{ site.github.url }}/assets/img/home.jpg" alt="Home" width="100%">
+    <h3 class="fw-bold border-bottom pb-3 mb-4">Selected work</h3>
+    <ul>
+      <li>Deployment of QKD links in Singapore, including a data-centre QKD link and QKD-secured VPN demonstrations.</li>
+      <li>Application-layer integration of more than 15 quantum-safe use cases and proofs of concept.</li>
+      <li>Development of local and international standards for secure QKD network deployment and protocol frameworks.</li>
+    </ul>
   </div>
 </div>
 
 {% include publications.html %}
-
-<div class="row g-5 mb-5">
-  <div class="col-md-12">
-    <h3 class="fw-bold border-bottom pb-3 mb-5">Updates</h3>
-    {% for post in site.posts %}
-      <p><a href="{{ site.github.url }}/{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% endfor %}
-  </div>
-</div>

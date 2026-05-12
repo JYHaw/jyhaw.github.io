@@ -1,10 +1,13 @@
 featured:
-- {name: 'Testing General Relativity with Present and Future Astrophysical Observations. Emanuele Berti (Mississippi U. and Lisbon, CENTRA), Enrico Barausse (Paris, Inst. Astrophys. and Paris U., VI-VII), Vitor Cardoso (Lisbon, IST and Perimeter Inst. Theor. Phys. and Lisbon, CENTRA), Leonardo Gualtieri (Rome U. and INFN, Rome), Paolo Pani (Rome U. and INFN, Rome and Lisbon, IST and Lisbon, CENTRA) et al.', url: '/publications/1501.07274.pdf'}
-- {name: 'Shock interactions, turbulence and the origin of the stellar mass spectrum. Ralph E. Pudritz and N. K.-R. Kevlahan', url: 'http://ms.mcmaster.ca/kevla/pdf/articles/PhilTransRSoc_2013.pdf'}
-- {name: 'Low shear diffusion central schemes for particle methods. Jonathan Panuelos, James Wadsley, Nicholas Kevlahan', url: 'http://ms.mcmaster.ca/kevla/pdf/articles/jcp_v414.pdf'}
+- {name: 'Publications and technical outputs: 19 journal papers, 10 technical reports, 3 books, 35 conference contributions, and 4 works in preparation.', url: '/cv'}
+- {name: 'Compact quantum randomness generator emerges from undergrad project, CQT Highlight (2026).', url: '/cv'}
+- {name: 'Bright photonic chip could power quantum networks, CQT Highlight (2025).', url: '/cv'}
 
 index:
-- {name: 'Testing General Relativity with Present and Future Astrophysical Observations. Emanuele Berti (Mississippi U. and Lisbon, CENTRA), Enrico Barausse (Paris, Inst. Astrophys. and Paris U., VI-VII), Vitor Cardoso (Lisbon, IST and Perimeter Inst. Theor. Phys. and Lisbon, CENTRA), Leonardo Gualtieri (Rome U. and INFN, Rome), Paolo Pani (Rome U. and INFN, Rome and Lisbon, IST and Lisbon, CENTRA) et al.', url: '/publications/1501.07274.pdf'}
-- {name: 'Shock interactions, turbulence and the origin of the stellar mass spectrum. Ralph E. Pudritz and N. K.-R. Kevlahan', url: 'http://ms.mcmaster.ca/kevla/pdf/articles/PhilTransRSoc_2013.pdf'}
-- {name: 'Low shear diffusion central schemes for particle methods. Jonathan Panuelos, James Wadsley, Nicholas Kevlahan', url: 'http://ms.mcmaster.ca/kevla/pdf/articles/jcp_v414.pdf'}
-- {name: 'Numerical solutions of thin film equations for polymer flows. Thomas. Salez, Joshua D. McGraw, Sara Cormier, Oliver Bäumchen, Kari Dalnoki-Veress, and Elie Raphaël', url: 'https://static1.squarespace.com/static/5684891d7086d74497aeb71f/t/56ec510d2fe1319543ab6d6f/1458327821946/10.1140-epje-i2012-12114-x.pdf'}
+- {name: 'Publications and technical outputs: 19 journal papers, 10 technical reports, 3 books, 35 conference contributions, and 4 works in preparation.', url: '/cv'}
+- {name: 'Compact quantum randomness generator emerges from undergrad project, CQT Highlight (2026).', url: '/cv'}
+- {name: 'Bright photonic chip could power quantum networks, CQT Highlight (2025).', url: '/cv'}
+- {name: 'Driving towards standards for quantum key distribution, CQT Highlight (2023).', url: '/cv'}
+- {name: 'Singapore data centres exchange quantum-safe encrypted files, CQT Highlight (2023).', url: '/cv'}
+- {name: 'Implementing a quantum-secured network in a metropolitan area, AWS Quantum Technologies Blog (2023).', url: '/cv'}
+- {name: 'Narrowing the gap between theory and practice for quantum secure communications, NUS News and CQT Highlight (2021).', url: '/cv'}

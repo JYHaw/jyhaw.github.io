@@ -1,5 +1,17 @@
-- title: 'Professor of Physics'
-  description: 'McMaster University (2005 – present)'
+- title: 'Senior Research Fellow'
+  description: 'Centre for Quantum Technologies, National University of Singapore, Singapore (2024–present). Leading deployment of a vendor-neutral, multi-protocol quantum-safe testbed with more than 12 nodes and over 1500 km of deployed fibre.'
 
-- title: 'Associate Faculty'
-  description: 'McGill University (1987 – 2005)'
+- title: 'Quantum Communications Technologist'
+  description: 'Centre for Quantum Technologies, National University of Singapore, Singapore (2022–2024). Spearheaded QKD deployment in the National Quantum-Safe Network and developed standards, interoperability, key management, and application-layer integration.'
+
+- title: 'Research Fellow'
+  description: 'Electrical & Computer Engineering, National University of Singapore, Singapore (2020–2022). Researched secure quantum randomness generation, broadband balanced quantum homodyne detection, and hybrid discrete-continuous variable QKD.'
+
+- title: 'Independent Consultant'
+  description: 'Berlin, Germany (2018–2020). Provided advisory and technical support for quantum communication experiments and quantum networking at Fraunhofer Heinrich-Hertz Institute.'
+
+- title: 'Research Associate'
+  description: 'Centre for Quantum Computation and Communication Technology, The Australian National University, Australia (2017). Worked on machine-learning cryptanalysis of QRNG and integrated photonic chips for continuous-variable QKD.'
+
+- title: 'Research Assistant'
+  description: 'Centre for Quantum Technologies, National University of Singapore, Singapore (2011–2012). Investigated ultrastrong coupling in superconducting circuit systems.'
