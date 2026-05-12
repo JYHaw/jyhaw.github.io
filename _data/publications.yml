@@ -1,13 +1,25 @@
 featured:
-- {name: 'Publications and technical outputs: 19 journal papers, 10 technical reports, 3 books, 35 conference contributions, and 4 works in preparation.', url: '/cv'}
-- {name: 'Compact quantum randomness generator emerges from undergrad project, CQT Highlight (2026).', url: '/cv'}
-- {name: 'Bright photonic chip could power quantum networks, CQT Highlight (2025).', url: '/cv'}
+- name: 'Compact quantum randomness generator emerges from undergrad project, CQT Highlight (2026).'
+  url: 'https://www.cqt.sg/highlight/2026-03-quantum-randomness/'
+- name: 'Bright photonic chip could power quantum networks, CQT Highlight (2025).'
+  url: 'https://www.cqt.sg/highlight/2025-12-photonic-chip-quantum-networks/'
+- name: 'CQT updates roles in national quantum programmes, CQT Highlight (2025).'
+  url: 'https://www.cqt.sg/highlight/2025-06-national-quantum-programmes/'
 
 index:
-- {name: 'Publications and technical outputs: 19 journal papers, 10 technical reports, 3 books, 35 conference contributions, and 4 works in preparation.', url: '/cv'}
-- {name: 'Compact quantum randomness generator emerges from undergrad project, CQT Highlight (2026).', url: '/cv'}
-- {name: 'Bright photonic chip could power quantum networks, CQT Highlight (2025).', url: '/cv'}
-- {name: 'Driving towards standards for quantum key distribution, CQT Highlight (2023).', url: '/cv'}
-- {name: 'Singapore data centres exchange quantum-safe encrypted files, CQT Highlight (2023).', url: '/cv'}
-- {name: 'Implementing a quantum-secured network in a metropolitan area, AWS Quantum Technologies Blog (2023).', url: '/cv'}
-- {name: 'Narrowing the gap between theory and practice for quantum secure communications, NUS News and CQT Highlight (2021).', url: '/cv'}
+- name: 'Compact quantum randomness generator emerges from undergrad project, CQT Highlight (2026).'
+  url: 'https://www.cqt.sg/highlight/2026-03-quantum-randomness/'
+- name: 'Bright photonic chip could power quantum networks, CQT Highlight (2025).'
+  url: 'https://www.cqt.sg/highlight/2025-12-photonic-chip-quantum-networks/'
+- name: 'CQT updates roles in national quantum programmes, CQT Highlight (2025).'
+  url: 'https://www.cqt.sg/highlight/2025-06-national-quantum-programmes/'
+- name: 'Singapore announces National Quantum Strategy, CQT Highlight (2024).'
+  url: 'https://www.cqt.sg/highlight/2024-05-singapore-national-quantum-strategy/'
+- name: 'Driving towards standards for quantum key distribution, CQT Highlight (2023).'
+  url: 'https://www.cqt.sg/research_area/quantum-communication-security/page/18/'
+- name: 'Singapore data centres exchange quantum-safe encrypted files, CQT Highlight (2023).'
+  url: 'https://www.cqt.sg/highlight/2023-06-nqsn-st-telemedia-global-data-centres/'
+- name: 'Implementing a quantum-secured network in a metropolitan area, AWS Quantum Technologies Blog (2023).'
+  url: 'https://aws.amazon.com/blogs/quantum-computing/implementing-a-quantum-secured-network-in-a-metropolitan-area/'
+- name: 'Narrowing the gap between theory and practice for quantum secure communications, CQT Highlight (2021).'
+  url: 'https://www.cqt.sg/highlight/2021-07-qkd-power-limiter/'
